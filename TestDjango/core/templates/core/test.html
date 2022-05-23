@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>EJEMPLOSUS</title>
+
+	</head>
+	<body>
+			<h1>Esta es una prueba</h1>
+            <h2>Bienvenido a la pagina {{nombre}}</h2>
+            <h3>La primera comida que te gusta es: {{comidas.0}}</h3>
+            <h3>Listado de comidas<h3>
+                <ol>
+                    {%for auxComida in comidas%}
+                    <li>{{auxComida}}</li>
+                    {%endfor%}
+                </ol>
+                <h3>{{nombre}} tiene un hijo llamado {{hijo.nombre}} que tiene {{hijo.edad}} años</h3>
+        </body>
+</html>
