@@ -9,4 +9,5 @@ urlpatterns = [
     path('Perro.html', views.Perro, name='Perro'),
     path('tarjeta.html', views.tarjeta, name='tarjeta'),
     path('todos.html', views.todos, name='todos'),
+    path('listaTarjetas.html', views.listaTarjetas, name='listaTarjetas'),
 ]

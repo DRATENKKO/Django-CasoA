@@ -1,11 +1,20 @@
 from django.shortcuts import render
-
+from .models import Tarjeta
 # Create your views here.
 class Persona:
     def __init__(self,nombre,edad):
         self.nombre=nombre
         self.edad=edad
         super().__init__()
+
+def listaTarjetas(request):
+    tarjeta=Tarjeta.objects.all() #<=> SELECT * FROM Vehiculos
+    #creo mi contexto para llevar los datos desde la tabla al html
+    contexto={
+        'Tarjetas': tarjeta
+    }
+    return render(request,'core/listaTarjetas.html',contexto)
+
 
 
 def index(request):
