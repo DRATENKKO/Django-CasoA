@@ -1,5 +1,4 @@
 from django.db import models
-from .settings import settings
 # Create your models here.
 
 #modelo SQLITO
@@ -22,7 +21,7 @@ class Vehiculo(models.Model):
 class Tarjeta(models.Model):
     numeroTarjeta= models.CharField(max_length=20, primary_key=True)
     nombre= models.CharField(max_length=100)
-    expiracion = models.DateField(input_formats=settings.DATE_INPUT_FORMATS)
+    expiracion = models.DateField()
     cvv = models.IntegerField(max_length=3)
 
     def __str__(self):
