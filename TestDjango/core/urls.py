@@ -10,4 +10,6 @@ urlpatterns = [
     path('tarjeta.html', views.tarjeta, name='tarjeta'),
     path('todos.html', views.todos, name='todos'),
     path('listaTarjetas.html', views.listaTarjetas, name='listaTarjetas'),
+    path('form_tarjeta.html', views.form_tarjeta, name='form_tarjeta'),
 ]
+

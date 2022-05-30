@@ -1,5 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import Tarjeta
+from django. views. decorators.csrf import csrf_exempt
+from core.forms import TarjetaForm
 # Create your views here.
 class Persona:
     def __init__(self,nombre,edad):
@@ -15,6 +17,19 @@ def listaTarjetas(request):
     }
     return render(request,'core/listaTarjetas.html',contexto)
 
+def form_tarjeta(request):
+    datos={
+        'form' : TarjetaForm()
+    }
+    if request.method == 'POST':
+        
+        formulario = TarjetaForm(request.POST)
+
+        if formulario.is_valid():
+            formulario.save()
+            datos ["mensaje"] = "GUARDADO EXITOSAMENTE"
+
+    return render(request, 'core/form_tarjeta.html', datos)
 
 
 def index(request):

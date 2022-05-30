@@ -9,6 +9,9 @@
 html {
   font-size: 22px;
 }
+.label{
+display: block;
+}
 
 .navbar {
     padding-top: 0; 
